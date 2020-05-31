@@ -44,7 +44,6 @@ pipeline {
             steps{
                           echo "Deployment started" 
                              sh 'ls -ltr'
- 
                              sh 'pwd'
                 sh "sed -i 's/tagversion/${env.BUILD_ID}/g' deployment.yaml" 
                 step([$class: 'KubernetesEngineBuilder', projectId: env.PROJECT_ID,
